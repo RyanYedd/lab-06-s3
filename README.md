@@ -1,3 +1,10 @@
+## My S3 buckets
+
+- Public collection (100 books + index): [https://public-bqn6bm.s3.amazonaws.com/index.html](https://public-bqn6bm.s3.amazonaws.com/index.html)
+- Private book (Dracula, `pg345.txt`), presigned for 604800 seconds: [presigned link](https://secret-bqn6bm.s3.amazonaws.com/pg345.txt?AWSAccessKeyId=ASIAQO4RUHM2KENTIC7D&Signature=1qnpeCkB3qp5nZGf7g%2BvMjJmOTE%3D&x-amz-security-token=IQoJb3JpZ2luX2VjEKT%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIB42mDDOdaiwoc6Y5IbYdLNKs1KVIcRUoOVOnOVXD%2BdrAiEA%2BTJYYEvS5k%2FfZ2rehW4awxx1CP8eMb%2BgwzsyM5WXldkqrQIIbBAAGgwwMzE5ODA3OTY3MjQiDG7zCnW2SyqhkFI%2BFyqKAg2sYg85yUNads5A%2BYhueRH3VP%2FZu4FoX4k3z50AFGM2wYv50djhnpqmJomRCBBs3%2BVzlcdrbgkgE8Xnx9kApsYntA2kF6fwbGzDSkv5YF0vbm%2BYVDi5taygTV8k4kpmu1OTjliHTp2K3yyRpHpFkvpv%2B9c8QWhxWLtyQoIQ2Y3DSprd%2Fgf729tTc%2F3Z7F04nL0BPPTJNwNEW9XNugBCQGUiKCXtE4cbSHU8aQ7lh3WpteVb10AiV7Y%2BmDrJ6ppXx%2BFV75T%2Fm2tZltZxY0l%2FrhGf6HjYrE7Zfn3K%2FHXhhyedeXIg889dOxfXez9D3WAKBojqeW9kh8GTZ5TqXqdR3fXAt7iEBw%2FnNR7UMLuB5tYGOp0B7O41PZpTjg97wrS4EgyYs3%2B3MLIGtxjZv5YV3eln8sWbooj8658iz5jwFxXyAsnm14wt8sqcPtDEm%2BktG1%2BVGildbZssjyJTuDf%2BXTaQ4XtI3akttSDnddwE%2BKlSXjFyJkOFxR4BplhIqrDoXtnkAXEd1sWWjeA2nNeOcUK1fi6MfYeUwrB4raElCV%2BSl%2BSAX3CMAl7WZHfUG%2BhhFA%3D%3D&Expires=1793244409)
+
+Use a **public bucket** (Block Public Access off + a bucket policy) when a whole collection should be readable by anyone with the URL, such as this staged Gutenberg corpus for Labs 07–09. Use a **presigned URL** when the object should stay private and you only want to grant temporary access to one file, without giving the recipient AWS credentials.
+
 # Lab 06: Working with S3 Storage
 
 The goal of this lab is to get you comfortable with **Amazon S3** object storage, building on what you have learned about the command line, AWS accounts, and scripting. You will stage a collection of 100 books from [Project Gutenberg](https://www.gutenberg.org/) in a **public** bucket that anyone can browse in a web browser, and share a single book from a **private** bucket with a time-limited presigned URL.
